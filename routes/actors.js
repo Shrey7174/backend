@@ -29,7 +29,7 @@ router.post('/', async (req, res) => {
 
 router.get('/public', async (req, res) => {
   try {
-    const response = await axios.get('https://api.apify.com/v2/acts/public');
+    const response = await axios.get('https://api.apify.com/v2/store?search=yourQuery&limit=5');
 
     if (!response.data || !Array.isArray(response.data.data?.items)) {
       return res.status(200).json({ data: { items: [] } });
